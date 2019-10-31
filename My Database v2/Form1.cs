@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -476,6 +477,43 @@ namespace My_Database_v2
             {
                 checkBox7.Checked = false;
                 checkBox21.Checked = false;
+            }
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            saveToCSV();
+        }
+
+        private void saveToCSV()
+        {
+            StreamWriter sw = new StreamWriter("data.csv");
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+                if (!row.IsNewRow)
+                {
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                        {
+                            sw.Write(dataGridView1.Rows[i].Cells[j].Value);
+                            if (j < dataGridView1.ColumnCount - 1)
+                                sw.Write(";");
+                        }
+                        sw.WriteLine();
+                    }
+                }
+
+            sw.Close();
+
+            string[] my_data = File.ReadAllLines("data.csv");
+            for (int i = 0; i < my_data.Length; i++)
+            {
+                if (!String.IsNullOrEmpty(my_data[i]))
+                {
+                    string[] data_Values = my_data[i].Split(';');
+                    //создаём новую строку
+                    MessageBox.Show(data_Values[0]);
+                }
             }
         }
     }
