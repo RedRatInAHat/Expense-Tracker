@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -24,22 +25,36 @@ namespace My_Database_v2
             InitializeComponent();
             Process.Start(@"C:\WebServers\denwer\Run.exe");
             Thread.Sleep(3000);
-            StartDatabase();
+
             CheckAllBoxes();
+
+            FirstLoadDatabases();
         }
 
         public void StartDatabase()
         {
-            string connStr = "server=localhost;user=root;database=outlay;CharSet=utf8;Convert Zero Datetime=True;";
+            try
+            {
+                string connStr = "server=localhost;user=root;database=outlay;CharSet=utf8;Convert Zero Datetime=True;";
 
-            connection = new MySqlConnection(connStr);
+                connection = new MySqlConnection(connStr);
 
-            connection.Open();
+                connection.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Невозможно подключиться к базе данных");
+            }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            query = string.Format("use {0};",
+                      comboBox1.Text.ToString());
+            command = new MySqlCommand(query, connection);
+            command.ExecuteNonQuery();
+
             Form2 f = new Form2();
             Data.EventHandler(connection, 0, "", "");
             f.ShowDialog();
@@ -47,8 +62,13 @@ namespace My_Database_v2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            query = string.Format("use {0};",
+                                         comboBox1.Text.ToString());
+            command = new MySqlCommand(query, connection);
+            command.ExecuteNonQuery();
             LoadTable();
         }
+
 
         private DataGridViewTextBoxColumn CreateColumn(string Name, string Text, int Width_)
         {
@@ -70,7 +90,7 @@ namespace My_Database_v2
             String[] words = dataGridView1.CurrentRow.Cells[4].Value.ToString().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             String[] date = words[0].Split(new char[] { '.' });
             string dateToSql = string.Format("{2}-{1}-{0}", date[0], date[1], date[2]);
-            
+
             query = String.Format("delete from Costs where name = '{0}' and costs_date = '{1}';",
                                 dataGridView1.CurrentRow.Cells[0].Value.ToString(), dateToSql);
             command = new MySqlCommand(query, connection);
@@ -329,14 +349,14 @@ namespace My_Database_v2
             }
 
             List<string[]> data = new List<string[]>();
-            
+
 
             while (reader.Read())
             {
                 data.Add(new string[how_many_columns]);
                 int c_number = 0;
 
-                for (int i = 0; i< b_columns.Length; i++)
+                for (int i = 0; i < b_columns.Length; i++)
                 {
                     if (b_columns[i])
                     {
@@ -426,6 +446,42 @@ namespace My_Database_v2
             }
         }
 
+        private void FirstLoadDatabases()
+        {
+            string connStr = "server=localhost;user=root;";
+
+            connection = new MySqlConnection(connStr);
+
+            LoadDatabases(comboBox1);
+            if (comboBox1.Items.Count != 0)
+            {
+                comboBox1.SelectedIndex = 0;
+
+                query = string.Format("use {0};",
+                                    comboBox1.Text.ToString());
+                command = new MySqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                LoadTable();
+            }
+        }
+        public void LoadDatabases(ComboBox comboBox)
+        {
+            connection.Open();
+
+            query = String.Format("show databases;");
+            command = new MySqlCommand(query, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string row = "";
+                for (int i = 0; i < reader.FieldCount; i++)
+                    row += reader.GetValue(i).ToString();
+                if (row != "information_schema")
+                    comboBox.Items.Add(row);
+            }
+            reader.Close();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             String[] words = dataGridView1.CurrentRow.Cells[4].Value.ToString().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -477,6 +533,98 @@ namespace My_Database_v2
                 checkBox7.Checked = false;
                 checkBox21.Checked = false;
             }
+        }
+
+
+        private void saveToCSV()
+        {
+            SaveFileDialog SFD = new SaveFileDialog();
+            SFD.Filter = "CSV files(*.csv)|*.csv|All files(*.*)|*.*";
+            if (SFD.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = SFD.FileName;
+
+            StreamWriter sw = new StreamWriter(filename);
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+                if (!row.IsNewRow)
+                {
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                        {
+                            sw.Write(dataGridView1.Rows[i].Cells[j].Value);
+                            if (j < dataGridView1.ColumnCount - 1)
+                                sw.Write(";");
+                        }
+                        sw.WriteLine();
+                    }
+                }
+
+            sw.Close();
+        }
+
+        private void loadFromCSV()
+        {
+            OpenFileDialog OFD = new OpenFileDialog();
+            if (OFD.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = OFD.FileName;
+
+            query = "SET NAMES utf8";
+            command = new MySqlCommand(query, connection);
+            command.ExecuteNonQuery();
+
+            string[] my_data = File.ReadAllLines(filename);
+            MessageBox.Show("Это будет долго, ожидайте");
+            for (int i = 0; i < my_data.Length; i++)
+            {
+                if (!String.IsNullOrEmpty(my_data[i]))
+                {
+                    try
+                    {
+                        string[] data_Values = my_data[i].Split(';');
+
+                        string[] sql_year = data_Values[4].Split('.');
+                        data_Values[4] = sql_year[2] + sql_year[1] + sql_year[0];
+                        query = string.Format("insert into costs values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}'); ",
+                                    data_Values[0], data_Values[1], data_Values[2], data_Values[3], data_Values[4], data_Values[5]);
+                        command = new MySqlCommand(query, connection);
+
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                    }
+
+                }
+            }
+        }
+
+        private void сохранитьВcsvфайлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveToCSV();
+        }
+
+        private void настройкиБазыДанныхToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            Form3 f = new Form3();
+
+            Data.EventHandler(connection, 0, "", "");
+
+            f.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            StartDatabase();
+        }
+
+        private void загрузитьcsvфайлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadFromCSV();
         }
     }
 }
