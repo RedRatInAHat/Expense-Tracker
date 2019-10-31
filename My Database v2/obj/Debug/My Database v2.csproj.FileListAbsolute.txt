@@ -36,3 +36,15 @@ C:\Users\RedRat\Documents\Личные проекты\My Database v4\My Database
 C:\Users\RedRat\Documents\Личные проекты\My Database v4\My Database v2\obj\Debug\My Database v2.csproj.CopyComplete
 C:\Users\RedRat\Documents\Личные проекты\My Database v4\My Database v2\obj\Debug\My Database v2.exe
 C:\Users\RedRat\Documents\Личные проекты\My Database v4\My Database v2\obj\Debug\My Database v2.pdb
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\bin\Debug\My Database v2.exe.config
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\bin\Debug\My Database v2.exe
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\bin\Debug\My Database v2.pdb
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My Database v2.csprojAssemblyReference.cache
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My_Database_v2.Form1.resources
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My_Database_v2.Form2.resources
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My_Database_v2.Properties.Resources.resources
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My Database v2.csproj.GenerateResource.cache
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My Database v2.csproj.CopyComplete
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My Database v2.exe
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My Database v2.pdb
+C:\Users\RedRat\Documents\My projects\My Database v4 - копия\My Database v2\obj\Debug\My_Database_v2.Form3.resources

@@ -79,21 +79,19 @@ namespace My_Database_v2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            query = "SET NAMES utf8";
+            command = new MySqlCommand(query, connection);
+            command.ExecuteNonQuery();
+
             if (mode == 1)
             {
-                query = "SET NAMES utf8";
-                command = new MySqlCommand(query, connection);
-                command.ExecuteNonQuery();
-
                 query = String.Format("delete from Costs where name = '{0}' and costs_date = '{1}';",
                                     del_name, del_date);
                 command = new MySqlCommand(query, connection);
                 command.ExecuteNonQuery();
             }
 
-            query = "SET NAMES utf8";
-            command = new MySqlCommand(query, connection);
-            command.ExecuteNonQuery();
+           
 
             String[] price = textBox1.Text.Split(new char[] { ',' });
             string right_price;

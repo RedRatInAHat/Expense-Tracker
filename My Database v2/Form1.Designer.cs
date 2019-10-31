@@ -23,12 +23,12 @@
         #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
+        /// Требуемый метод для поддержки конструктора — не изменяйте
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -61,13 +61,20 @@
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьcsvфайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьВcsvфайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиБазыДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // dataGridView1
-            // 
+            //
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -75,24 +82,24 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 36);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 548);
+            this.dataGridView1.Size = new System.Drawing.Size(749, 526);
             this.dataGridView1.TabIndex = 0;
-            // 
+            //
             // button1
-            // 
+            //
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(767, 36);
             this.button1.Name = "button1";
@@ -101,9 +108,9 @@
             this.button1.Text = "Вывод";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //
             // button2
-            // 
+            //
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(768, 501);
             this.button2.Name = "button2";
@@ -112,9 +119,9 @@
             this.button2.Text = "Добавить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
+            //
             // button3
-            // 
+            //
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(768, 559);
             this.button3.Name = "button3";
@@ -123,9 +130,9 @@
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
+            //
             // button4
-            // 
+            //
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(769, 530);
             this.button4.Name = "button4";
@@ -134,9 +141,9 @@
             this.button4.Text = "Изменить";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
+            //
             // radioButton1
-            // 
+            //
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -147,9 +154,9 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Простой вывод";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
+            //
             // radioButton2
-            // 
+            //
             this.radioButton2.AutoSize = true;
             this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.radioButton2.Location = new System.Drawing.Point(767, 113);
@@ -159,18 +166,18 @@
             this.radioButton2.Text = "Настроить вывод";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
+            //
             // panel1
-            // 
+            //
             this.panel1.Controls.Add(this.radioButton4);
             this.panel1.Controls.Add(this.radioButton3);
             this.panel1.Location = new System.Drawing.Point(787, 408);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(116, 43);
             this.panel1.TabIndex = 7;
-            // 
+            //
             // radioButton4
-            // 
+            //
             this.radioButton4.AutoSize = true;
             this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.radioButton4.Location = new System.Drawing.Point(5, 23);
@@ -180,9 +187,9 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "По убыванию";
             this.radioButton4.UseVisualStyleBackColor = true;
-            // 
+            //
             // radioButton3
-            // 
+            //
             this.radioButton3.AutoSize = true;
             this.radioButton3.Checked = true;
             this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -193,9 +200,9 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "По возрастанию";
             this.radioButton3.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox1
-            // 
+            //
             this.checkBox1.AutoSize = true;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox1.Location = new System.Drawing.Point(793, 135);
@@ -204,9 +211,9 @@
             this.checkBox1.TabIndex = 28;
             this.checkBox1.Text = "Название";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox16
-            // 
+            //
             this.checkBox16.AutoSize = true;
             this.checkBox16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox16.Location = new System.Drawing.Point(793, 362);
@@ -215,9 +222,9 @@
             this.checkBox16.TabIndex = 27;
             this.checkBox16.Text = "Тип покупки";
             this.checkBox16.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox2
-            // 
+            //
             this.checkBox2.AutoSize = true;
             this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox2.Location = new System.Drawing.Point(888, 135);
@@ -226,9 +233,9 @@
             this.checkBox2.TabIndex = 26;
             this.checkBox2.Text = "Цена";
             this.checkBox2.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox22
-            // 
+            //
             this.checkBox22.AutoSize = true;
             this.checkBox22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox22.Location = new System.Drawing.Point(793, 250);
@@ -237,9 +244,9 @@
             this.checkBox22.TabIndex = 25;
             this.checkBox22.Text = "Тип покупки";
             this.checkBox22.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox17
-            // 
+            //
             this.checkBox17.AutoSize = true;
             this.checkBox17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox17.Location = new System.Drawing.Point(793, 227);
@@ -248,9 +255,9 @@
             this.checkBox17.TabIndex = 24;
             this.checkBox17.Text = "Название";
             this.checkBox17.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox3
-            // 
+            //
             this.checkBox3.AutoSize = true;
             this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox3.Location = new System.Drawing.Point(793, 158);
@@ -259,9 +266,9 @@
             this.checkBox3.TabIndex = 23;
             this.checkBox3.Text = "Тип покупки";
             this.checkBox3.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox11
-            // 
+            //
             this.checkBox11.AutoSize = true;
             this.checkBox11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox11.Location = new System.Drawing.Point(793, 339);
@@ -270,9 +277,9 @@
             this.checkBox11.TabIndex = 22;
             this.checkBox11.Text = "Название";
             this.checkBox11.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox15
-            // 
+            //
             this.checkBox15.AutoSize = true;
             this.checkBox15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox15.Location = new System.Drawing.Point(888, 385);
@@ -281,9 +288,9 @@
             this.checkBox15.TabIndex = 21;
             this.checkBox15.Text = "Дата";
             this.checkBox15.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox18
-            // 
+            //
             this.checkBox18.AutoSize = true;
             this.checkBox18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox18.Location = new System.Drawing.Point(888, 227);
@@ -292,9 +299,9 @@
             this.checkBox18.TabIndex = 20;
             this.checkBox18.Text = "Цена";
             this.checkBox18.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox14
-            // 
+            //
             this.checkBox14.AutoSize = true;
             this.checkBox14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox14.Location = new System.Drawing.Point(793, 385);
@@ -303,9 +310,9 @@
             this.checkBox14.TabIndex = 8;
             this.checkBox14.Text = "Комментарий";
             this.checkBox14.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox4
-            // 
+            //
             this.checkBox4.AutoSize = true;
             this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox4.Location = new System.Drawing.Point(888, 158);
@@ -314,9 +321,9 @@
             this.checkBox4.TabIndex = 18;
             this.checkBox4.Text = "Магазин";
             this.checkBox4.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox21
-            // 
+            //
             this.checkBox21.AutoSize = true;
             this.checkBox21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox21.Location = new System.Drawing.Point(888, 273);
@@ -326,9 +333,9 @@
             this.checkBox21.Text = "Дата";
             this.checkBox21.UseVisualStyleBackColor = true;
             this.checkBox21.CheckedChanged += new System.EventHandler(this.checkBox21_CheckedChanged);
-            // 
+            //
             // checkBox12
-            // 
+            //
             this.checkBox12.AutoSize = true;
             this.checkBox12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox12.Location = new System.Drawing.Point(888, 339);
@@ -337,9 +344,9 @@
             this.checkBox12.TabIndex = 16;
             this.checkBox12.Text = "Цена";
             this.checkBox12.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox20
-            // 
+            //
             this.checkBox20.AutoSize = true;
             this.checkBox20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox20.Location = new System.Drawing.Point(793, 273);
@@ -348,9 +355,9 @@
             this.checkBox20.TabIndex = 15;
             this.checkBox20.Text = "Комментарий";
             this.checkBox20.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox19
-            // 
+            //
             this.checkBox19.AutoSize = true;
             this.checkBox19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox19.Location = new System.Drawing.Point(888, 250);
@@ -359,9 +366,9 @@
             this.checkBox19.TabIndex = 14;
             this.checkBox19.Text = "Магазин";
             this.checkBox19.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox9
-            // 
+            //
             this.checkBox9.AutoSize = true;
             this.checkBox9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox9.Location = new System.Drawing.Point(888, 181);
@@ -370,9 +377,9 @@
             this.checkBox9.TabIndex = 13;
             this.checkBox9.Text = "Дата";
             this.checkBox9.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox6
-            // 
+            //
             this.checkBox6.AutoSize = true;
             this.checkBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox6.Location = new System.Drawing.Point(769, 204);
@@ -382,9 +389,9 @@
             this.checkBox6.Text = "Группировать";
             this.checkBox6.UseVisualStyleBackColor = true;
             this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
-            // 
+            //
             // checkBox5
-            // 
+            //
             this.checkBox5.AutoSize = true;
             this.checkBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox5.Location = new System.Drawing.Point(793, 181);
@@ -393,9 +400,9 @@
             this.checkBox5.TabIndex = 11;
             this.checkBox5.Text = "Комментарий";
             this.checkBox5.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox13
-            // 
+            //
             this.checkBox13.AutoSize = true;
             this.checkBox13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox13.Location = new System.Drawing.Point(888, 362);
@@ -404,9 +411,9 @@
             this.checkBox13.TabIndex = 10;
             this.checkBox13.Text = "Магазин";
             this.checkBox13.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox8
-            // 
+            //
             this.checkBox8.AutoSize = true;
             this.checkBox8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox8.Location = new System.Drawing.Point(888, 296);
@@ -416,9 +423,9 @@
             this.checkBox8.Text = "По году";
             this.checkBox8.UseVisualStyleBackColor = true;
             this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
-            // 
+            //
             // checkBox10
-            // 
+            //
             this.checkBox10.AutoSize = true;
             this.checkBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox10.Location = new System.Drawing.Point(769, 319);
@@ -428,9 +435,9 @@
             this.checkBox10.Text = "Сортировать по:";
             this.checkBox10.UseVisualStyleBackColor = true;
             this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
-            // 
+            //
             // checkBox7
-            // 
+            //
             this.checkBox7.AutoSize = true;
             this.checkBox7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox7.Location = new System.Drawing.Point(793, 296);
@@ -440,24 +447,72 @@
             this.checkBox7.Text = "По месяцу";
             this.checkBox7.UseVisualStyleBackColor = true;
             this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(12, 7);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(119, 23);
-            this.button5.TabIndex = 30;
-            this.button5.Text = "Записать CSV";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
+            //
+            // menuStrip1
+            //
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(975, 24);
+            this.menuStrip1.TabIndex = 31;
+            this.menuStrip1.Text = "menuStrip1";
+            //
+            // файлToolStripMenuItem
+            //
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.загрузитьcsvфайлToolStripMenuItem,
+            this.сохранитьВcsvфайлToolStripMenuItem,
+            this.настройкиБазыДанныхToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.файлToolStripMenuItem.Text = "Файл...";
+            //
+            // загрузитьcsvфайлToolStripMenuItem
+            //
+            this.загрузитьcsvфайлToolStripMenuItem.Name = "загрузитьcsvфайлToolStripMenuItem";
+            this.загрузитьcsvфайлToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.загрузитьcsvфайлToolStripMenuItem.Text = "Загрузить .csv-файл";
+            this.загрузитьcsvфайлToolStripMenuItem.Click += new System.EventHandler(this.загрузитьcsvфайлToolStripMenuItem_Click);
+            //
+            // сохранитьВcsvфайлToolStripMenuItem
+            //
+            this.сохранитьВcsvфайлToolStripMenuItem.Name = "сохранитьВcsvфайлToolStripMenuItem";
+            this.сохранитьВcsvфайлToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.сохранитьВcsvфайлToolStripMenuItem.Text = "Сохранить в .csv-файл";
+            this.сохранитьВcsvфайлToolStripMenuItem.Click += new System.EventHandler(this.сохранитьВcsvфайлToolStripMenuItem_Click);
+            //
+            // настройкиБазыДанныхToolStripMenuItem
+            //
+            this.настройкиБазыДанныхToolStripMenuItem.Name = "настройкиБазыДанныхToolStripMenuItem";
+            this.настройкиБазыДанныхToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.настройкиБазыДанныхToolStripMenuItem.Text = "Изменить базу данных";
+            this.настройкиБазыДанныхToolStripMenuItem.Click += new System.EventHandler(this.настройкиБазыДанныхToolStripMenuItem_Click);
+            //
+            // comboBox1
+            //
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(41, 31);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 32;
+            //
+            // label1
+            //
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "БД:";
+            //
             // Form1
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 596);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.checkBox16);
             this.Controls.Add(this.checkBox2);
@@ -488,12 +543,16 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "Покупки";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,7 +592,12 @@
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьcsvфайлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьВcsvфайлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem настройкиБазыДанныхToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
-
